@@ -25,6 +25,7 @@ class ResortCache(private val context: Context) {
         //TODO here he use the ContentResolver
         context.contentResolver.registerContentObserver(ArticleContract.Articles.CONTENT_URI, true, object : ContentObserver(null) {
             override fun onChange(selfChange: Boolean, uri: Uri?) {
+                val id = uri!!.lastPathSegment
                 val cursor = context.contentResolver.query(uri, null, null, null, null)
                 var concat = ""
                 while (cursor.moveToNext()) {

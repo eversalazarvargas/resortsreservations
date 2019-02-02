@@ -26,6 +26,9 @@ class MainActivity2 : FragmentActivity() {
         setContentView(R.layout.activity_main)
         tvData = findViewById(R.id.tvData)
 
+        // Create your sync account
+        AccountGeneral.createSyncAccount(this)
+
         val textEdit = findViewById<EditText>(R.id.txDataToSave)
 //        textEdit.addTextChangedListener(object: TextWatcher {
 //            override fun afterTextChanged(p0: Editable?) {
